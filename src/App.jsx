@@ -41,6 +41,7 @@ do formulário e zerar a barra de progresso novamente.
 
 function App() {
 
+  //criação do objeto data
   const [data, setData] = useState({
     fullName: '',
     email: '',
@@ -50,9 +51,10 @@ function App() {
 
   let validatedInputs = 0;
 
+  //preenchimento dos valores adicionados pelo usuario
   const handleChange = (e) => {
 
-    const { name, value} = e.target
+    const { name, value } = e.target
 
     setData((prev) => {
       const newData = {...prev, [name]: value}
@@ -61,6 +63,8 @@ function App() {
     })
   }
 
+
+  //lógica de carregamento da barra
   const calculateProgress = () => {
 
     const totalPercent = 100;
@@ -96,7 +100,8 @@ function App() {
   }
 
   calculateProgress();
-
+  
+  //botão submit
   const handleClick = () => {
     alert("Formulario enviado com sucesso!");
 
